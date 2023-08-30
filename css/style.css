@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+:root {
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+  --fw-sm: 400;
+  --fw-md: 500;
+  --fw-lg: 700;
+  --size-100: 0.8rem;
+  --size-200: 1.2rem;
+  --size-300: 1.6rem;
+  --size-400: 2rem;
+  --size-500: 2.4rem;
+  --size-600: 2.8rem;
+  --size-700: 3.2rem;
+  --size-800: 4rem;
+  --size-900: 4.8rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-family: var(--ff-body);
+  color: hsl(228, 39%, 23%);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.btn {
+  border: 0;
+  border-radius: 100vmax;
+  font-weight: var(--fw-lg);
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 1.25em 2.5em;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 1.125em 1em -1em hsl(12, 88%, 40%);
+}
+.btn--primary {
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(12, 88%, 59%);
+}
+.btn--primary:hover, .btn--primary:focus-visible {
+  background-color: hsl(12, 88%, 75%);
+}
+.btn--white {
+  color: hsl(12, 88%, 59%);
+  background-color: hsl(0, 0%, 98%);
+}
+.btn--white:hover, .btn--white:focus-visible {
+  color: hsl(12, 88%, 75%);
+}
+
+.section {
+  padding-block: var(--size-800);
+}
+
+.text-primary-dark {
+  color: hsl(228, 39%, 23%);
+}
+
+.text-accent-dark {
+  color: hsl(12, 88%, 59%);
+}
+
+.text-accent-light {
+  color: hsl(13, 100%, 96%);
+}
+
+.text-neutral-light {
+  color: hsl(0, 0%, 98%);
+}
+
+.text-neutral-dark {
+  color: hsl(233, 12%, 13%);
+}
+
+.bg-primary-dark {
+  background-color: hsl(228, 39%, 23%);
+}
+
+.bg-accent-dark {
+  background-color: hsl(12, 88%, 59%);
+}
+
+.bg-accent-light {
+  background-color: hsl(13, 100%, 96%);
+}
+
+.bg-neutral-light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.bg-neutral-dark {
+  background-color: hsl(233, 12%, 13%);
+}
+
+.fw-sm {
+  font-weight: var(--fw-sm);
+}
+
+.fw-md {
+  font-weight: var(--fw-md);
+}
+
+.fw-lg {
+  font-weight: var(--fw-lg);
+}
+
+.fs-primary-heading {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.fs-300 {
+  font-size: 1.3rem;
+}
+
+.fs-400 {
+  font-size: 1.4rem;
+}
+
+.fs-500 {
+  font-size: 1.6rem;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1.6rem;
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+/*# sourceMappingURL=style.css.map */

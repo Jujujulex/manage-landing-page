@@ -1,0 +1,94 @@
+.text-primary-dark {
+  color: $color-primary-dark;
+}
+
+.text-accent-dark {
+  color: $color-accent-dark;
+}
+
+.text-accent-light {
+  color: $color-accent-light;
+}
+
+.text-neutral-light {
+  color: $color-neutral-light;
+}
+
+.text-neutral-dark {
+  color: $color-neutral-dark;
+}
+
+.bg-primary-dark {
+  background-color: $color-primary-dark;
+}
+
+.bg-accent-dark {
+  background-color: $color-accent-dark;
+}
+
+.bg-accent-light {
+  background-color: $color-accent-light;
+}
+
+.bg-neutral-light {
+  background-color: $color-neutral-light;
+}
+
+.bg-neutral-dark {
+  background-color: $color-neutral-dark;
+}
+
+.fw-sm {
+  font-weight: var(--fw-sm);
+}
+.fw-md {
+  font-weight: var(--fw-md);
+}
+.fw-lg {
+  font-weight: var(--fw-lg);
+}
+
+.fs-primary-heading {
+  font-size: $fs-700-1;
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-size: $fs-600-1;
+  line-height: 1.1;
+}
+
+.fs-300 {
+  font-size: $fs-300;
+}
+
+.fs-400 {
+  font-size: $fs-400;
+}
+
+.fs-500 {
+  font-size: $fs-default;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1.6rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+// .padding-block-800 {
+//   padding-block: var(--size-800);
+// }
