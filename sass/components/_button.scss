@@ -8,6 +8,8 @@
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 1.125em 1em -1em $color-accent-dark-2;
+  text-decoration: none;
+  display: inline-flex;
 
   &--primary {
     color: $color-neutral-light;

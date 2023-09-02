@@ -1,3 +1,36 @@
 .section {
-  padding-block: var(--size-800);
+  padding-block: var(--size-900);
+  &--hero {
+    padding-top: 7rem;
+
+    h1 {
+      max-width: 16ch;
+    }
+  }
+  &--manage {
+    h2 {
+      max-width: 18ch;
+    }
+  }
+
+  &--cta {
+    padding-block: 6rem;
+    position: relative;
+    isolation: isolate;
+    // isolation ensures the background-color doesnt go behind or forward due to z-index
+
+    p {
+      max-width: 21ch;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image: url(../../images/bg-simplify-section-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: 120% 100%;
+    }
+  }
 }

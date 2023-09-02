@@ -14,7 +14,7 @@
   --size-600: 2.8rem;
   --size-700: 3.2rem;
   --size-800: 4rem;
-  --size-900: 4.8rem;
+  --size-900: 5rem;
 }
 
 *,
@@ -79,6 +79,15 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+p:not([class]) {
+  max-width: 31.5ch;
+  opacity: 0.7;
+}
+
+p[data-width=wide] {
+  max-width: 83%;
+}
+
 .btn {
   border: 0;
   border-radius: 100vmax;
@@ -89,6 +98,8 @@ svg {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 1.125em 1em -1em hsl(12, 88%, 40%);
+  text-decoration: none;
+  display: inline-flex;
 }
 .btn--primary {
   color: hsl(0, 0%, 98%);
@@ -105,8 +116,77 @@ svg {
   color: hsl(12, 88%, 75%);
 }
 
+.footer {
+  padding-block: 6rem;
+  color: hsl(0, 0%, 98%);
+}
+.footer .even-columns p {
+  font-size: 1rem;
+}
+.footer--nav__list a {
+  color: hsl(0, 0%, 98%);
+  text-decoration: none;
+}
+
+.header {
+  padding-top: var(--size-700);
+}
+.header .nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .mobile-nav-toggle {
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0.6rem;
+  display: none;
+}
+.header .icon-close {
+  display: none;
+}
+.header .nav__list {
+  display: flex;
+  gap: clamp(var(--size-500), 5vw, var(--size-800));
+  font-weight: var(--fw-md);
+}
+.header .nav__list a {
+  text-decoration: none;
+}
+.header .nav__list a:hover, .header .nav__list a:focus {
+  color: hsl(227, 12%, 55%);
+}
+
 .section {
-  padding-block: var(--size-800);
+  padding-block: var(--size-900);
+}
+.section--hero {
+  padding-top: 7rem;
+}
+.section--hero h1 {
+  max-width: 16ch;
+}
+.section--manage h2 {
+  max-width: 18ch;
+}
+.section--cta {
+  padding-block: 6rem;
+  position: relative;
+  isolation: isolate;
+}
+.section--cta p {
+  max-width: 21ch;
+}
+.section--cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url(../../images/bg-simplify-section-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 120% 100%;
 }
 
 .text-primary-dark {
@@ -187,6 +267,19 @@ svg {
   text-align: center;
 }
 
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .container {
   --max-width: 1110px;
   --padding: 1.6rem;
@@ -194,11 +287,22 @@ svg {
   margin-inline: auto;
 }
 
+.flow * + * {
+  margin-top: var(--flow-space, 2.4em);
+}
+
 .even-columns {
   display: grid;
   gap: 2rem;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+}
+.even-columns--vertical-center {
+  align-items: center;
+}
+
+.cta-button {
+  justify-self: end;
 }
 
 /*# sourceMappingURL=style.css.map */

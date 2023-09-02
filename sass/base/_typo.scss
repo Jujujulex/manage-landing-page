@@ -1,0 +1,8 @@
+p:not([class]) {
+  max-width: 31.5ch;
+  opacity: 0.7;
+}
+
+p[data-width="wide"] {
+  max-width: 83%;
+}

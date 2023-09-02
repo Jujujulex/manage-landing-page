@@ -17,25 +17,48 @@
   <body>
     <header class="header header--primary">
       <div class="container">
-        <a href="#"><img src="images/logo.svg" alt="Manage" class="logo" /></a>
-        <nav class="nav nav--primary-navigation">
-          <ul aria-label="nav-Primary" role="list" class="nav__list">
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Community</a></li>
-          </ul>
-        </nav>
-        <button class="btn btn--primary">Get Started</button>
+        <div class="nav-wrapper">
+          <a href="#"
+            ><img src="images/logo.svg" alt="Manage" class="logo"
+          /></a>
+          <button
+            class="mobile-nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <img
+              src="images/icon-hamburger.svg"
+              alt=""
+              aria-hidden="true"
+              class="icon-hamburger"
+            />
+            <img
+              src="images/icon-close.svg"
+              alt=""
+              aria-hidden="true"
+              class="icon-close"
+            />
+            <span class="visually-hidden">Menu</span>
+          </button>
+          <nav class="nav nav--primary-navigation" id="primary-navigation">
+            <ul aria-label="nav-Primary" role="list" class="nav__list">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </nav>
+          <button class="btn btn--primary">Get Started</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="section hero--section">
+      <section class="section section--hero">
         <div class="container">
           <div class="even-columns">
-            <div>
+            <div class="flow">
               <h1 class="fs-primary-heading fw-lg">
                 Bring everyone together to build better products.
               </h1>
@@ -56,10 +79,10 @@
         </div>
       </section>
 
-      <section class="section manage--section">
+      <section class="section section--manage">
         <div class="container">
           <div class="even-columns">
-            <div>
+            <div class="flow">
               <h2 class="fs-secondary-heading fw-lg">
                 What’s different about Manage?
               </h2>
@@ -70,31 +93,40 @@
               </p>
             </div>
             <div>
-              <ul class="numbered-items" role="list">
+              <ul class="numbered-items flow" role="list">
                 <li>
-                  <h3 class="fs-500 fw-lg">Track company-wide progress</h3>
-                  <p>
-                    See how your day-to-day tasks fit into the wider vision. Go
-                    from tracking progress at the milestone level all the way
-                    done to the smallest of details. Never lose sight of the
-                    bigger picture again.
-                  </p>
+                  <div class="flow" style="--flow-space: 1em">
+                    <h3 class="fs-500 fw-lg">Track company-wide progress</h3>
+                    <p data-width="wide">
+                      See how your day-to-day tasks fit into the wider vision.
+                      Go from tracking progress at the milestone level all the
+                      way done to the smallest of details. Never lose sight of
+                      the bigger picture again.
+                    </p>
+                  </div>
                 </li>
                 <li>
-                  <h3 class="fs-500 fw-lg">Advanced built-in reports</h3>
-                  <p>
-                    Set internal delivery estimates and track progress toward
-                    company goals. Our customisable dashboard helps you build
-                    out the reports you need to keep key stakeholders informed.
-                  </p>
+                  <div class="flow" style="--flow-space: 1em">
+                    <h3 class="fs-500 fw-lg">Advanced built-in reports</h3>
+                    <p data-width="wide">
+                      Set internal delivery estimates and track progress toward
+                      company goals. Our customisable dashboard helps you build
+                      out the reports you need to keep key stakeholders
+                      informed.
+                    </p>
+                  </div>
                 </li>
                 <li>
-                  <h3 class="fs-500 fw-lg">Everything you need in one place</h3>
-                  <p>
-                    Stop jumping from one service to another to communicate,
-                    store files, track tasks and share documents. Manage offers
-                    an all-in-one team productivity solution.
-                  </p>
+                  <div class="flow" style="--flow-space: 1em">
+                    <h3 class="fs-500 fw-lg">
+                      Everything you need in one place
+                    </h3>
+                    <p data-width="wide">
+                      Stop jumping from one service to another to communicate,
+                      store files, track tasks and share documents. Manage
+                      offers an all-in-one team productivity solution.
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -102,21 +134,21 @@
         </div>
       </section>
 
-      <section class="section section-carousel">
+      <section class="section section--carousel">
         <h2 class="fs-secondary-heading fw-lg">What they've said</h2>
         <!-- Carousel here -->
         <button class="btn btn--primary">Get Started</button>
       </section>
 
-      <section class="section section-cta | bg-accent-dark text-accent-light">
+      <section class="section section--cta | bg-accent-dark text-accent-light">
         <div class="container">
-          <div class="even-columns">
+          <div class="even-columns even-columns--vertical-center">
             <div>
               <p class="fs-secondary-heading fw-lg">
                 Simplify how your team works today.
               </p>
             </div>
-            <div>
+            <div class="cta-button">
               <button class="btn btn--white" data-type="inverted">
                 Get Started
               </button>
@@ -126,24 +158,54 @@
       </section>
     </main>
 
-    <footer class="footer bg-neutral-dark text-neautral-light">
+    <footer class="footer bg-neutral-dark">
       <div class="container">
         <div class="even-columns">
           <div>
             <a href="#"
               ><img src="images/logo.svg" alt="Manage" class="logo"
             /></a>
-            <ul role="list" aria-label="Social links">
-              <li><a aria-label="facebook" href="#"></a></li>
-              <li><a aria-label="youtube" href="#"></a></li>
-              <li><a aria-label="twitter" href="#"></a></li>
-              <li><a aria-label="pinterest" href="#"></a></li>
-              <li><a aria-label="instragram" href="#"></a></li>
+            <ul
+              role="list"
+              aria-label="Social links"
+              class="flow"
+              style="--flow-space: 1em"
+            >
+              <li>
+                <a aria-label="facebook" href="#"
+                  ><img src="./images/icon-facebook.svg" alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a aria-label="youtube" href="#"
+                  ><img src="./images/icon-youtube.svg" alt="youtube"
+                /></a>
+              </li>
+              <li>
+                <a aria-label="twitter" href="#"
+                  ><img src="./images/icon-twitter.svg" alt="twitter"
+                /></a>
+              </li>
+              <li>
+                <a aria-label="pinterest" href="#"
+                  ><img src="./images/icon-pinterest.svg" alt="pinterest"
+                /></a>
+              </li>
+              <li>
+                <a aria-label="instragram" href="#"
+                  ><img src="./images/icon-instagram.svg" alt="instragram"
+                /></a>
+              </li>
             </ul>
           </div>
           <div>
             <nav class="footer--nav">
-              <ul aria-label="Footer" role="list" class="footer--nav__list">
+              <ul
+                aria-label="Footer"
+                role="list"
+                class="footer--nav__list flow"
+                style="--flow-space: 1em"
+              >
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Products</a></li>
@@ -171,5 +233,7 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Juliet Amobi</a>.
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

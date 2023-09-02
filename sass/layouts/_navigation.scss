@@ -1,0 +1,43 @@
+.header {
+  padding-top: var(--size-700);
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-nav-toggle {
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0.6rem;
+
+    display: none;
+
+    // mobile
+  }
+
+  .icon-close {
+    display: none;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      gap: clamp(var(--size-500), 5vw, var(--size-800));
+      font-weight: var(--fw-md);
+    }
+
+    &__list a {
+      text-decoration: none;
+      //   color: $color-primary-dark;
+    }
+
+    &__list a:hover,
+    &__list a:focus {
+      color: $color-primary-light;
+    }
+  }
+}

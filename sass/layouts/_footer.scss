@@ -1,0 +1,16 @@
+.footer {
+  padding-block: 6rem;
+  color: $color-neutral-light;
+
+  //
+
+  .even-columns p {
+    font-size: 1rem;
+  }
+  &--nav {
+    &__list a {
+      color: $color-neutral-light;
+      text-decoration: none;
+    }
+  }
+}
