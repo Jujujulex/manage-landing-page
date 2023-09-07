@@ -8,12 +8,29 @@
     }
   }
   &--manage {
+    // position: relative;
+    padding-top: 7rem;
+
     h2 {
       max-width: 18ch;
+
+      &::before {
+        content: url(../../images/bg-tablet-pattern.svg);
+        position: absolute;
+        bottom: -15%;
+        left: -15%;
+        // width: 30%;
+        max-height: 2vh;
+        z-index: -1;
+        zoom: 75%;
+
+        background-repeat: no-repeat;
+      }
     }
   }
 
   &--cta {
+    margin-block-start: 6rem;
     padding-block: 6rem;
     position: relative;
     isolation: isolate;
@@ -33,4 +50,15 @@
       background-position: 120% 100%;
     }
   }
+
+  // &--carousel {
+  //   .slider {
+  //     display: flex;
+  //   }
+
+  //   .slider > * {
+  //     width: 100%;
+  //     flex: 0 0 auto;
+  //   }
+  // }
 }

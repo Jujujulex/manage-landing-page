@@ -1,16 +1,78 @@
 .footer {
   padding-block: 6rem;
+  --logo-color: hsl(0 0% 98%);
   color: $color-neutral-light;
 
-  //
+  //   .even-columns p {
+  //     font-size: 1rem;
+  //     align-self: end;
+  //   }
 
-  .even-columns p {
-    font-size: 1rem;
+  &__logo-social {
+    display: grid;
+    gap: 3rem;
   }
+  //   .logo {
+  //     --logo-color: $color-neutral-light;
+  //   }
+  &--social-link {
+    display: flex;
+    gap: 1rem;
+
+    &--social-icon {
+      width: var(--size-400);
+      aspect-ratio: 1;
+      fill: $color-neutral-light;
+    }
+
+    & a:where(:hover, :focus) &--social-icon {
+      fill: $color-accent-dark;
+    }
+  }
+
+  // &:where(:hover, :focus) {
+  //   background-color: $color-accent-dark;
+  //   color: transparent;
+  // }
+
   &--nav {
+    columns: 2;
+
     &__list a {
       color: $color-neutral-light;
       text-decoration: none;
+
+      &:where(:hover, :focus) {
+        color: $color-accent-mild;
+      }
     }
   }
+
+  &--form {
+    display: grid;
+    justify-content: right;
+    align-content: space-between;
+
+    & p {
+      font-size: 1rem;
+      justify-self: end;
+    }
+  }
+
+  .form {
+    display: flex;
+    gap: 1rem;
+  }
+
+  input:where([type="email"], [type="text"]) {
+    border-radius: 100vw;
+    outline: none;
+    padding: var(--size-100) var(--size-200);
+    border: 0;
+  }
+
+  // .error-message {
+  //   color: red;
+  //   font-size: 1.5rem;
+  // }
 }

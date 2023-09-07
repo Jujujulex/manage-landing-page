@@ -85,7 +85,12 @@ p:not([class]) {
 }
 
 p[data-width=wide] {
-  max-width: 83%;
+  max-width: 99%;
+}
+
+p[data-width=wide-2] {
+  max-width: 77%;
+  display: inline-block;
 }
 
 .btn {
@@ -105,6 +110,10 @@ p[data-width=wide] {
   color: hsl(0, 0%, 98%);
   background-color: hsl(12, 88%, 59%);
 }
+.btn--primary[data-shadow=none] {
+  box-shadow: none;
+  padding: 1em 1.5em;
+}
 .btn--primary:hover, .btn--primary:focus-visible {
   background-color: hsl(12, 88%, 75%);
 }
@@ -116,16 +125,134 @@ p[data-width=wide] {
   color: hsl(12, 88%, 75%);
 }
 
+.slider {
+  display: flex;
+  list-style: none;
+  padding-block: 5rem;
+  padding-top: 9rem;
+  overflow-x: hidden;
+  gap: 2.5rem;
+  margin-left: -11rem;
+}
+.slider > * {
+  width: 34%;
+  flex: 0 0 auto;
+}
+.slider img {
+  width: 7rem;
+  position: relative;
+  top: 1%;
+  margin-inline: auto;
+  transform: translateY(50%);
+}
+.slider-content {
+  background: hsl(0, 0%, 97%);
+  border-radius: 0.5rem;
+  padding: 7rem 3rem 3rem;
+}
+
+.a11y-slider-status {
+  display: none;
+}
+
+.section--hero__blob-image::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44%;
+  max-height: 65vh;
+  z-index: -1;
+  aspect-ratio: 1/1.2;
+  background-image: url(../../images/bg-tablet-pattern.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+.numbered-items {
+  counter-reset: count;
+}
+.numbered-items li {
+  counter-increment: count;
+}
+.numbered-items div {
+  display: grid;
+  position: relative;
+  align-items: center;
+  column-gap: var(--size-300);
+  grid-template-columns: min-content 1fr;
+}
+.numbered-items p {
+  grid-column: 2/-1;
+}
+.numbered-items h3 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  line-height: 1;
+}
+.numbered-items div::before {
+  content: "0" counter(count);
+  display: flex;
+  align-items: center;
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(12, 88%, 59%);
+  font-weight: var(--fw-lg);
+  padding: 0 1.5em;
+  height: 40px;
+  border-radius: 100vw;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
 .footer {
   padding-block: 6rem;
+  --logo-color: hsl(0 0% 98%);
   color: hsl(0, 0%, 98%);
 }
-.footer .even-columns p {
-  font-size: 1rem;
+.footer__logo-social {
+  display: grid;
+  gap: 3rem;
+}
+.footer--social-link {
+  display: flex;
+  gap: 1rem;
+}
+.footer--social-link--social-icon {
+  width: var(--size-400);
+  aspect-ratio: 1;
+  fill: hsl(0, 0%, 98%);
+}
+.footer--social-link a:where(:hover, :focus) .footer--social-link--social-icon {
+  fill: hsl(12, 88%, 59%);
+}
+.footer--nav {
+  columns: 2;
 }
 .footer--nav__list a {
   color: hsl(0, 0%, 98%);
   text-decoration: none;
+}
+.footer--nav__list a:where(:hover, :focus) {
+  color: hsl(12, 88%, 75%);
+}
+.footer--form {
+  display: grid;
+  justify-content: right;
+  align-content: space-between;
+}
+.footer--form p {
+  font-size: 1rem;
+  justify-self: end;
+}
+.footer .form {
+  display: flex;
+  gap: 1rem;
+}
+.footer input:where([type=email], [type=text]) {
+  border-radius: 100vw;
+  outline: none;
+  padding: var(--size-100) var(--size-200);
+  border: 0;
 }
 
 .header {
@@ -137,15 +264,24 @@ p[data-width=wide] {
   justify-content: space-between;
 }
 .header .mobile-nav-toggle {
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
   border: 0;
   cursor: pointer;
   background: transparent;
   border: 0;
   padding: 0.6rem;
   display: none;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  background-image: url(../../images/icon-hamburger.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.header .icon-close {
-  display: none;
+.header .mobile-nav-toggle[aria-expanded=true] {
+  background-image: url(../../images/icon-close.svg);
 }
 .header .nav__list {
   display: flex;
@@ -154,6 +290,7 @@ p[data-width=wide] {
 }
 .header .nav__list a {
   text-decoration: none;
+  color: hsl(228, 39%, 23%);
 }
 .header .nav__list a:hover, .header .nav__list a:focus {
   color: hsl(227, 12%, 55%);
@@ -168,10 +305,24 @@ p[data-width=wide] {
 .section--hero h1 {
   max-width: 16ch;
 }
+.section--manage {
+  padding-top: 7rem;
+}
 .section--manage h2 {
   max-width: 18ch;
 }
+.section--manage h2::before {
+  content: url(../../images/bg-tablet-pattern.svg);
+  position: absolute;
+  bottom: -15%;
+  left: -15%;
+  max-height: 2vh;
+  z-index: -1;
+  zoom: 75%;
+  background-repeat: no-repeat;
+}
 .section--cta {
+  margin-block-start: 6rem;
   padding-block: 6rem;
   position: relative;
   isolation: isolate;
@@ -260,7 +411,11 @@ p[data-width=wide] {
 }
 
 .fs-500 {
-  font-size: 1.6rem;
+  font-size: 2rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .attribution {

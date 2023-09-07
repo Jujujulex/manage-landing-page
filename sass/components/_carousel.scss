@@ -1,0 +1,33 @@
+.slider {
+  display: flex;
+  list-style: none;
+  padding-block: 5rem;
+  padding-top: 9rem;
+  overflow-x: hidden;
+  gap: 2.5rem;
+  margin-left: -11rem;
+
+  & > * {
+    width: 34%;
+    flex: 0 0 auto;
+  }
+
+  & img {
+    width: 7rem;
+    position: relative;
+    top: 1%;
+    margin-inline: auto;
+    transform: translateY(50%);
+  }
+
+  &-content {
+    background: $color-neutral-mild;
+    border-radius: 0.5rem;
+    padding: 7rem 3rem 3rem;
+    // max-width: 29%;
+  }
+}
+
+.a11y-slider-status {
+  display: none;
+}

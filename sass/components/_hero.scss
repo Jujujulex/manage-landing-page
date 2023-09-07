@@ -1,1 +1,19 @@
+.section--hero {
+  &__blob-image {
+    // position: relative;
 
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44%;
+      max-height: 65vh;
+      z-index: -1;
+      aspect-ratio: 1 / 1.2;
+      background-image: url(../../images/bg-tablet-pattern.svg);
+      background-position: bottom left;
+      background-repeat: no-repeat;
+    }
+  }
+}

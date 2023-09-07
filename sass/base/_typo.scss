@@ -4,5 +4,9 @@ p:not([class]) {
 }
 
 p[data-width="wide"] {
-  max-width: 83%;
+  max-width: 99%;
+}
+p[data-width="wide-2"] {
+  max-width: 77%;
+  display: inline-block;
 }

@@ -2,7 +2,7 @@
   "name": "manage-landing-page-master",
   "version": "1.0.0",
   "description": "![Design preview for the Manage landing page coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "watch": "sass --watch sass/main.scss css/style.css",
     "server": "live-server"
@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2",
+    "a11y-slider": "^0.4.22",
+    "live-server": "^1.1.0",
     "sass": "^1.66.1"
   }
 }
