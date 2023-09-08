@@ -19,6 +19,13 @@
   --size-900: 5rem;
 }
 
+// RESPONSIVENESS
+$bp-desktop-small: 75em; //1200px
+$bp-tablet: 67em; //1072px
+$bp-phone-lg: 50em; //800px
+$bp-phone: 30.5em; //488px
+$bp-smallest: 17.5em; //280px
+
 *,
 *::before,
 *::after {
@@ -38,6 +45,10 @@ ol[role="list"] {
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: 50%;
+  }
 }
 
 html:focus-within {

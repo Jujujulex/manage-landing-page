@@ -7,25 +7,58 @@
       max-width: 16ch;
     }
   }
+
   &--manage {
-    // position: relative;
     padding-top: 7rem;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      padding-block: 9rem;
+    }
 
     h2 {
       max-width: 18ch;
 
-      &::before {
-        content: url(../../images/bg-tablet-pattern.svg);
-        position: absolute;
-        bottom: -15%;
-        left: -15%;
-        // width: 30%;
-        max-height: 2vh;
-        z-index: -1;
-        zoom: 75%;
-
-        background-repeat: no-repeat;
+      @media only screen and (max-width: $bp-phone-lg) {
+        font-size: 5rem;
+        max-width: 15ch;
+        margin-inline: auto;
       }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -100%;
+        left: -20%;
+        width: 70%;
+        height: 100%;
+        z-index: -1;
+        aspect-ratio: 1;
+        zoom: 75%;
+        background-image: url(../../images/bg-tablet-pattern.svg);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: $bp-desktop-small) {
+          bottom: -120%;
+          zoom: 70%;
+        }
+
+        @media only screen and (max-width: $bp-tablet) {
+          bottom: -75%;
+
+          zoom: 60%;
+        }
+
+        @media only screen and (max-width: $bp-phone-lg) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--carousel .btn {
+    @media only screen and (max-width: $bp-phone-lg) {
+      margin-top: 3rem;
     }
   }
 
@@ -38,6 +71,19 @@
 
     p {
       max-width: 21ch;
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        justify-self: center;
+        font-size: 5rem;
+        max-width: 12ch;
+      }
+    }
+
+    .cta-button {
+      @media only screen and (max-width: $bp-phone-lg) {
+        justify-self: center;
+        padding-block: 4rem;
+      }
     }
 
     &::before {
@@ -48,17 +94,14 @@
       background-image: url(../../images/bg-simplify-section-desktop.svg);
       background-repeat: no-repeat;
       background-position: 120% 100%;
+
+      @media only screen and (max-width: $bp-desktop-small) {
+        background-position: -50% 100%;
+      }
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        background-position: 29%;
+      }
     }
   }
-
-  // &--carousel {
-  //   .slider {
-  //     display: flex;
-  //   }
-
-  //   .slider > * {
-  //     width: 100%;
-  //     flex: 0 0 auto;
-  //   }
-  // }
 }

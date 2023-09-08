@@ -5,11 +5,25 @@
   padding-top: 9rem;
   overflow-x: hidden;
   gap: 2.5rem;
-  margin-left: -11rem;
+  margin-left: -8rem;
+
+  @media only screen and (max-width: $bp-tablet) {
+    scroll-padding-inline: 30px;
+    margin-left: -4rem;
+  }
+
+  @media only screen and (max-width: $bp-phone) {
+    padding-top: 0;
+  }
 
   & > * {
     width: 34%;
     flex: 0 0 auto;
+    position: relative;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      width: 40%;
+    }
   }
 
   & img {
@@ -18,6 +32,10 @@
     top: 1%;
     margin-inline: auto;
     transform: translateY(50%);
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      width: 10rem;
+    }
   }
 
   &-content {
@@ -25,6 +43,45 @@
     border-radius: 0.5rem;
     padding: 7rem 3rem 3rem;
     // max-width: 29%;
+
+    @media only screen and (max-width: $bp-tablet) {
+      padding: 6rem 2rem 3rem;
+    }
+
+    & h3 {
+      @media only screen and (max-width: $bp-phone-lg) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.a11y-slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-block: var(--size-500);
+  gap: var(--size-300);
+
+  & li {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+
+    & button {
+      display: block;
+      font-size: 0;
+      text-indent: -9999px;
+      background: transparent;
+      border: 1px solid $color-accent-dark !important;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+
+      &.active {
+        background: $color-accent-dark;
+      }
+    }
   }
 }
 

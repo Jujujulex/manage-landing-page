@@ -1,7 +1,5 @@
 .section--hero {
   &__blob-image {
-    // position: relative;
-
     &::before {
       content: "";
       position: absolute;
@@ -14,6 +12,34 @@
       background-image: url(../../images/bg-tablet-pattern.svg);
       background-position: bottom left;
       background-repeat: no-repeat;
+
+      @media only screen and (max-width: $bp-desktop-small) {
+        width: 39%;
+        zoom: 77%;
+      }
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        zoom: 70%;
+        max-height: 100vh;
+        aspect-ratio: 1;
+        width: 66%;
+      }
+
+      @media only screen and (max-width: $bp-phone) {
+        zoom: 50%;
+        width: 75%;
+      }
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      order: -1;
+    }
+
+    & .section--image {
+      @media only screen and (max-width: $bp-phone-lg) {
+        width: 75%;
+        margin-inline: auto;
+      }
     }
   }
 }

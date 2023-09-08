@@ -51,11 +51,27 @@
 .fs-primary-heading {
   font-size: $fs-700-1;
   line-height: 1.1;
+
+  @media only screen and (max-width: $bp-phone-lg) {
+    font-size: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-phone) {
+    line-height: 1.3;
+  }
 }
 
 .fs-secondary-heading {
   font-size: $fs-600-1;
   line-height: 1.1;
+
+  @media only screen and (max-width: $bp-phone-lg) {
+    font-size: 4.5rem;
+  }
+
+  @media only screen and (max-width: $bp-phone) {
+    line-height: 1.3;
+  }
 }
 
 .fs-300 {
@@ -113,12 +129,14 @@
   &--vertical-center {
     align-items: center;
   }
+
+  @media only screen and (max-width: $bp-phone-lg) {
+    grid-auto-flow: row;
+    justify-items: center;
+    text-align: center;
+  }
 }
 
 .cta-button {
   justify-self: end;
 }
-
-// .padding-block-800 {
-//   padding-block: var(--size-800);
-// }

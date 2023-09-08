@@ -1,17 +1,31 @@
 .header {
   padding-top: var(--size-700);
 
+  @media only screen and (max-width: $bp-phone-lg) {
+    padding-top: 8rem;
+  }
+
   .nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    & .btn {
+      @media only screen and (max-width: $bp-phone-lg) {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      padding-inline: 3rem;
+    }
   }
 
   .mobile-nav-toggle {
     position: fixed;
-    top: 3rem;
-    right: 2rem;
-
+    top: 8rem;
+    right: 4rem;
+    z-index: 10;
     border: 0;
     cursor: pointer;
     background: transparent;
@@ -20,7 +34,7 @@
 
     display: none;
 
-    width: 1.5rem;
+    width: 3rem;
     aspect-ratio: 1;
     background-image: url(../../images/icon-hamburger.svg);
     background-size: contain;
@@ -31,28 +45,70 @@
       background-image: url(../../images/icon-close.svg);
     }
 
+    &:focus,
+    &:active {
+      outline: 2px solid white;
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      display: block;
+    }
+
     // mobile
   }
-
-  // .icon-close {
-  //   display: none;
-  // }
 
   .nav {
     &__list {
       display: flex;
       gap: clamp(var(--size-500), 5vw, var(--size-800));
       font-weight: var(--fw-md);
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        display: grid;
+        gap: var(--size-600);
+        text-align: center;
+        font-weight: var(--fw-lg);
+      }
     }
 
     &__list a {
       text-decoration: none;
       color: $color-primary-dark;
+      font-size: 1.7rem;
     }
 
     &__list a:hover,
     &__list a:focus {
       color: $color-primary-light;
     }
+
+    &[data-visible] {
+      display: block;
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      display: none;
+      position: fixed;
+      inset: 11.2rem var(--size-400) auto;
+      background: $color-neutral-light;
+      padding: var(--size-700);
+      margin-inline: auto;
+      z-index: 999;
+      box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
+      max-width: 35rem;
+    }
+  }
+
+  &[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
+
+  &[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
   }
 }

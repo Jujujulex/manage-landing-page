@@ -11,13 +11,18 @@
   text-decoration: none;
   display: inline-flex;
 
+  @media only screen and (max-width: $bp-phone-lg) {
+    padding: 1.2em 2.5em;
+    font-size: $fs-500;
+  }
+
   &--primary {
     color: $color-neutral-light;
     background-color: $color-accent-dark;
 
     &[data-shadow="none"] {
       box-shadow: none;
-      padding: 1em 1.5em;
+      padding: 1.5em 2.5em;
     }
 
     &:hover,

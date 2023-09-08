@@ -5,13 +5,23 @@ const primaryNav = document.querySelector(".nav");
 
 const slider = new A11YSlider(document.querySelector(".slider"), {
   adaptiveHeight: false,
-  dots: true,
-  centerMode: true,
+
   arrows: false,
   skipBtn: false,
   responsive: {
-    480: {
-      dots: false, // dots enabled 1280px and up
+    200: {
+      dots: true,
+      slidesToShow: 1,
+      centerMode: true,
+    },
+    300: {
+      dots: true,
+      slidesToShow: 1,
+      centerMode: false,
+    },
+    801: {
+      slidesToShow: 3,
+      dots: false,
     },
   },
 });
@@ -30,8 +40,9 @@ function displayErrorMessage(message) {
   errorDiv.textContent = message;
   errorDiv.style.color = "red";
   errorDiv.style.marginInline = "auto";
-  errorDiv.style.marginTop = "-3rem";
+  errorDiv.style.marginTop = "1rem";
   errorDiv.style.fontSize = "1.5rem";
+  errorDiv.style.textAlign = "center";
 }
 
 function displayValidMessage(message) {
@@ -39,7 +50,7 @@ function displayValidMessage(message) {
   errorDiv.textContent = message;
   errorDiv.style.color = "green";
   errorDiv.style.marginInline = "auto";
-  errorDiv.style.marginTop = "-3rem";
+  errorDiv.style.marginTop = "1rem";
   errorDiv.style.fontSize = "1.5rem";
 }
 

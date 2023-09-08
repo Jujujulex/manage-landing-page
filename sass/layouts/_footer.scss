@@ -3,26 +3,86 @@
   --logo-color: hsl(0 0% 98%);
   color: $color-neutral-light;
 
-  //   .even-columns p {
-  //     font-size: 1rem;
-  //     align-self: end;
-  //   }
+  &--wrapper {
+    display: grid;
+    padding-inline: 4rem;
+    grid-template-areas:
+      "logo-social nav form"
+      "logo-social nav copyright";
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      grid-template-areas:
+        "form"
+        "nav"
+        "logo-social"
+        "copyright";
+
+      gap: 4rem;
+      justify-content: center;
+    }
+
+    .nav {
+      grid-area: nav;
+    }
+  }
+
+  &--copyright {
+    grid-area: copyright;
+    font-size: 1rem;
+    justify-self: end;
+    align-self: end;
+    opacity: 0.7;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      justify-self: center;
+    }
+  }
+
+  .even-columns {
+    @media only screen and (max-width: $bp-phone-lg) {
+      gap: 5rem;
+    }
+  }
 
   &__logo-social {
-    display: grid;
+    grid-area: logo-social;
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
-  //   .logo {
-  //     --logo-color: $color-neutral-light;
-  //   }
+
   &--social-link {
     display: flex;
     gap: 1rem;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      gap: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      gap: 1rem;
+    }
 
     &--social-icon {
       width: var(--size-400);
       aspect-ratio: 1;
       fill: $color-neutral-light;
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        width: var(--size-700);
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        width: var(--size-500);
+      }
     }
 
     & a:where(:hover, :focus) &--social-icon {
@@ -30,13 +90,13 @@
     }
   }
 
-  // &:where(:hover, :focus) {
-  //   background-color: $color-accent-dark;
-  //   color: transparent;
-  // }
-
   &--nav {
     columns: 2;
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      gap: 6rem;
+    }
 
     &__list a {
       color: $color-neutral-light;
@@ -45,34 +105,41 @@
       &:where(:hover, :focus) {
         color: $color-accent-mild;
       }
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        font-size: 2rem;
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        font-size: 1.5rem;
+      }
     }
   }
 
   &--form {
     display: grid;
-    justify-content: right;
+    justify-content: end;
     align-content: space-between;
-
-    & p {
-      font-size: 1rem;
-      justify-self: end;
-    }
+    grid-area: form;
   }
 
   .form {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   input:where([type="email"], [type="text"]) {
     border-radius: 100vw;
     outline: none;
-    padding: var(--size-100) var(--size-200);
+    padding: var(--size-400) var(--size-700);
     border: 0;
-  }
 
-  // .error-message {
-  //   color: red;
-  //   font-size: 1.5rem;
-  // }
+    @media only screen and (max-width: $bp-phone-lg) {
+      padding: var(--size-200) var(--size-600);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding: var(--size-100);
+    }
+  }
 }

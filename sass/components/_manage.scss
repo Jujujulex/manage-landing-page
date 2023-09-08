@@ -1,6 +1,10 @@
 .numbered-items {
   counter-reset: count;
 
+  @media only screen and (max-width: $bp-phone-lg) {
+    padding-block-start: 7rem;
+  }
+
   & li {
     counter-increment: count;
   }
@@ -15,13 +19,19 @@
   & p {
     grid-column: 2 / -1;
 
-    // at small screen grid-column: 1/-1
+    @media only screen and (max-width: $bp-phone-lg) {
+      grid-column: 1 / -1;
+    }
   }
 
   & h3 {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     line-height: 1;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      font-size: 1.8rem;
+    }
   }
 
   & div::before {
@@ -36,18 +46,25 @@
     border-radius: 100vw;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      padding: 1.5em 2em;
+      font-size: 2rem;
+    }
   }
 
   // this is for small screen
-  // & div::after {
-  //   content: "";
-  //   display: block;
-  //   z-index: -1;
-  //   background: $color-accent-light;
-  //   grid-column: 1 / -1;
-  //   grid-row: 1 / 2;
-  //   height: 40px;
-  //   box-shadow: 5em 0 0 $color-accent-light;
-  //   border-radius: 100vw;
-  // }
+  & div::after {
+    @media only screen and (max-width: $bp-phone-lg) {
+      content: "";
+      display: block;
+      z-index: -1;
+      background: $color-accent-light;
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      height: 40px;
+      box-shadow: 5em 0 0 $color-accent-light;
+      border-radius: 100vw;
+    }
+  }
 }

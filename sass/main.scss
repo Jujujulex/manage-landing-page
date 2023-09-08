@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
 
 @import "abstract/variables";
-@import "abstract/mixins";
 
 @import "base/base";
 @import "base/typo";
 
 @import "components/button";
 @import "components/carousel";
-@import "components/cta";
+
 @import "components/hero";
 @import "components/manage";
 
 @import "layouts/footer";
-@import "layouts/header";
 @import "layouts/navigation";
 
 @import "pages/home";
